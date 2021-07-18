@@ -103,7 +103,7 @@ class Lapiseira < Ferramentas
         pegarDaReserva()
     end
 
-    def escrever(texto, pressaoAtual)
+    def escrever(obj_papel, texto, pressaoAtual)
         if (pressaoAtual > 10)
             quebrarGrafite()
         elsif (pressaoAtual < 10)
@@ -111,7 +111,7 @@ class Lapiseira < Ferramentas
             textoTemporario = super(texto) #Ferramentas.escrever()
         end 
         setpressaoEscrita(0)
-        return textoTemporario
+        obj_papel.setTextoContido(textoTemporario)
     end
 
 end
